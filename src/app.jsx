@@ -1,27 +1,14 @@
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Route, Routes } from 'react-router-dom';
 import { ExampleCommonComponent, TestNav } from 'src/components';
-import { ForgotPass, ResetPass, SignIn, SignUp } from 'src/components/auth/components';
-import { AuthPage, NotFound } from 'src/pages';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#73c41d',
-      contrastText: '#fff',
-    },
-    secondary: {
-      main: '#969797',
-    },
-  },
-});
+import { Auth, NotFound } from 'src/pages';
+import { ForgotPass, ResetPass, SignIn, SignUp } from 'src/pages/auth/components';
 
 const App = () => (
-  <ThemeProvider theme={theme}>
+  <>
     <TestNav />
     <Routes>
       <Route path="/" element={<ExampleCommonComponent />} />
-      <Route path="auth" element={<AuthPage />}>
+      <Route path="auth" element={<Auth />}>
         <Route index element={<SignIn />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
@@ -30,7 +17,7 @@ const App = () => (
       </Route>
       <Route path="/*" element={<NotFound />} />
     </Routes>
-  </ThemeProvider>
+  </>
 );
 
 export default App;

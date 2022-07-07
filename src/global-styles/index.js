@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { createTheme } from '@mui/material/styles';
 
 export default css`
   // Reset css
@@ -45,3 +46,15 @@ export default css`
     color: #333;
   }
 `;
+
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#73c41d',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#969797',
+    },
+  },
+});
