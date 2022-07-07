@@ -36,4 +36,12 @@ export default css`
   textarea {
     white-space: revert;
   }
+  a:hover {
+    cursor: pointer;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
 `;
