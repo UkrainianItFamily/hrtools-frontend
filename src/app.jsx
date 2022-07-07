@@ -10,7 +10,6 @@ const App = () => (
       <Route path="/" element={<ExampleCommonComponent />} />
       <Route path="auth" element={<Auth />}>
         <Route index element={<SignIn />} />
-        <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
         <Route path="forgot-pass" element={<ForgotPass />} />
         <Route path="reset-pass" element={<ResetPass />} />

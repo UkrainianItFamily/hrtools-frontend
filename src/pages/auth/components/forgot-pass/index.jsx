@@ -15,7 +15,7 @@ const forgotPass = () => (
           Підтвердити
         </Button>
       </S.FormRow>
-      <S.StyledLink to="/auth/sign-in">Увійти</S.StyledLink>
+      <S.StyledLink to="/auth/">Увійти</S.StyledLink>
     </form>
   </>
 );
