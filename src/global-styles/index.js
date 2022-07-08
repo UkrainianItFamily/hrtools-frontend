@@ -45,6 +45,11 @@ export default css`
     font-family: 'Roboto', sans-serif;
     color: #333;
   }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const theme = createTheme({
