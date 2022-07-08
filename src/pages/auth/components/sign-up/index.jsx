@@ -3,13 +3,37 @@ import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FlexContainer } from 'src/components/';
+import * as Yup from 'yup';
 
 import * as S from '../../styles';
 
-const SignUpForm = ({ setformSubmite }) => {
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Не менше 2 символів')
+    .max(50, 'Не більше 50 символів')
+    .required("Обов'язкове поле"),
+  lastname: Yup.string()
+    .min(2, 'Не менше 2 символів')
+    .max(50, 'Не більше 50 символів')
+    .required("Обов'язкове поле"),
+  email: Yup.string().email('Некоректна email адрасса').required("Обов'язкове поле"),
+  phone: Yup.string().required("Обов'язкове поле"),
+  password: Yup.string()
+    .required("Обов'язкове поле")
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/,
+      'Пароль мусить мати 8 і більше символів, хоча б одну велику літеру, хоча б одну малу літеру та одну цифру',
+    ),
+  passwordCheck: Yup.string()
+    .required("Обов'язкове поле")
+    .oneOf([Yup.ref('password'), null], 'Паролі не збігаються'),
+});
+
+const SignUpForm = ({ setformSubmit }) => {
   const handleRequest = (values) => {
     console.log(values);
-    setformSubmite(true);
+    setformSubmit(true);
   };
   return (
     <>
@@ -23,46 +47,7 @@ const SignUpForm = ({ setformSubmite }) => {
           password: '',
           passwordCheck: '',
         }}
-        validate={(values) => {
-          const errors = {};
-
-          if (!values.name) {
-            errors.name = "Обов'язкове поле";
-          } else if (values.name.length <= 2) {
-            errors.name = 'Має бути довше 2 символів';
-          }
-
-          if (!values.lastname) {
-            errors.nalastnameme = "Обов'язкове поле";
-          } else if (values.lastname.length <= 2) {
-            errors.lastname = 'Має бути довше 2 символів';
-          }
-
-          if (!values.email) {
-            errors.email = "Обов'язкове поле";
-          } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-            errors.email = 'Некоректна email адрасса';
-          }
-
-          if (!values.phone) {
-            errors.phone = "Обов'язкове поле";
-          }
-
-          if (!values.password) {
-            errors.password = "Обов'язкове поле";
-          } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/.test(values.password)) {
-            errors.password =
-              'Пароль мусить мати 8 і більше символів, хоча б одну велику літеру, хоча б одну малу літеру та одну цифру';
-          }
-
-          if (!values.passwordCheck) {
-            errors.passwordCheck = "Обов'язкове поле";
-          } else if (!(values.passwordCheck === values.password)) {
-            errors.passwordCheck = 'Паролі не збігаються';
-          }
-
-          return errors;
-        }}
+        validationSchema={SignupSchema}
         onSubmit={(values) => handleRequest(values)}
       >
         {({
@@ -180,22 +165,22 @@ const SignUpForm = ({ setformSubmite }) => {
     </>
   );
 };
-const FormSubmiteText = () => (
+const FormSubmitText = () => (
   <>
     <S.AuthTitle>Лист із підтведженням було відправленно на ваш email</S.AuthTitle>
-    <div className="flex-center">
+    <FlexContainer $justify="center">
       <NavLink to="/">
         <Button variant="contained">На головну</Button>
       </NavLink>
-    </div>
+    </FlexContainer>
   </>
 );
 const SignUp = () => {
-  const [formSubmite, setformSubmite] = useState(false);
+  const [formSubmit, setformSubmit] = useState(false);
 
-  return !formSubmite ? <SignUpForm setformSubmite={setformSubmite} /> : <FormSubmiteText />;
+  return !formSubmit ? <SignUpForm setformSubmit={setformSubmit} /> : <FormSubmitText />;
 };
 SignUpForm.propTypes = {
-  setformSubmite: PropTypes.func.isRequired,
+  setformSubmit: PropTypes.func.isRequired,
 };
 export default SignUp;
