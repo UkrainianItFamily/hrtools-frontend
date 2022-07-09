@@ -1,3 +1,3 @@
-import UserProfile from 'src/pages/user-profile/user-profile';
+import UserProfile from './user-profile/index';
 
 export { UserProfile };

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import * as S from '../../../style';
+import * as S from '../../../styles';
 import { MainMenu } from './index';
 
 const MobileNavbar = () => {

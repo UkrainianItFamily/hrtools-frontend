@@ -7,7 +7,7 @@ import {
   TimeOffInfo,
 } from 'src/pages/user-profile/components';
 
-import * as S from './style';
+import * as S from './styles';
 
 const UserProfile = () => (
   <S.Main>

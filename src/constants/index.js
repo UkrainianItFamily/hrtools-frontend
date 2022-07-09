@@ -1,1 +1,3 @@
-export * as exampleConstants from './example.constants';
+import menuItems from './constants';
+
+export { menuItems };

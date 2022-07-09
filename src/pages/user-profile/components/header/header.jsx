@@ -1,7 +1,7 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { images } from 'src/assets';
 
-import * as S from '../../style';
+import * as S from '../../styles';
 import { MainMenu, MobileNavbar } from './components';
 
 const Header = () => {
