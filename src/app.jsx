@@ -6,7 +6,7 @@ import { UserProfile } from 'src/pages/index';
 const App = () => (
   <Routes>
     <Route path="/" element={<ExampleCommonComponent />} />
-    <Route path="profile" element={<UserProfile />} />
+    <Route path="profile/*" element={<UserProfile />} />
   </Routes>
 );
 

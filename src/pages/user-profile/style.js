@@ -30,6 +30,16 @@ export const Header = styled.div`
   min-height: 200px;
   font-family: Helvetica;
   z-index: 1;
+  @media (max-width: 1216px) {
+    grid-template-rows: 1fr 2fr;
+  }
+  @media (max-width: 995px) {
+    grid-template-rows: 1fr 1fr;
+
+    @media (max-width: 923px) {
+    grid-template-rows: 3fr 1fr;
+
+  }
 `;
 
 export const Title = styled.h1`
@@ -39,10 +49,13 @@ export const Title = styled.h1`
 export const MainNavigation = styled.ul`
   list-style: none;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
-  gap: 10px;
   grid-area: menu;
   align-items: end;
+  @media (max-width: 1216px) {
+    margin-top: 25px;
+  }
 `;
 
 export const MainNavigationItem = styled.li`
@@ -77,6 +90,8 @@ export const Avatar = styled.img`
 
 export const TitleContainer = styled.div`
   display: flex;
+  gap: 15px;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -84,6 +99,9 @@ export const TitleContainer = styled.div`
   align-items: end;
   padding-bottom: 15px;
   padding-left: 15px;
+  @media (max-width: 1216px) {
+    padding-bottom: 0px;
+  }
 `;
 
 export const TitleButtons = styled.div`
@@ -136,4 +154,35 @@ export const AsideMenuItemSubtitle = styled.span`
   color: #9a9a9a;
   font-size: 14px;
   font-weight: 700;
+`;
+
+export const MobileNavigation = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: end;
+  position: absolute;
+  right: 0;
+  width: 40%;
+`;
+
+export const MobileNavIconContainer = styled.div`
+  right: 16px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: ${(props) => (props.active ? 'block' : 'none')};
+`;
+
+export const MobileNavContainer = styled.div`
+  background: linear-gradient(to left, #547801, #82af13);
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding-left: 16px;
+  position: absolute;
+  top: 16px;
 `;
