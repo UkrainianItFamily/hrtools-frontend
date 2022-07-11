@@ -44,6 +44,15 @@ export const AuthTitle = styled.h2`
   font-weight: bold;
 `;
 
+export const AuthSubTitle = styled.h2`
+  text-align: center;
+  font-size: 18px;
+  max-width: 310px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-weight: bold;
+`;
+
 export const FormRow = styled.div`
   margin-bottom: 15px;
 `;
@@ -52,4 +61,7 @@ export const StyledLink = styled(NavLink)`
   text-decoration: underline;
   color: rgba(0, 0, 0, 0.87);
   font-size: 14px;
+  &:hover {
+    color: green;
+  }
 `;
