@@ -1,9 +1,11 @@
 import { Button, TextField } from '@mui/material';
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FlexContainer } from 'src/components/';
+import { authActions } from 'src/store/actions';
 import * as Yup from 'yup';
 
 import * as S from '../../styles';
@@ -177,6 +179,16 @@ const FormSubmitText = () => (
 );
 const SignUp = () => {
   const [formSubmit, setformSubmit] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const data = {
+      name: 'test1',
+      lastname: 'test1',
+    };
+    // Оновлюємо заголовок документа, використовуючи API браузера
+    dispatch(authActions.createUser(data));
+  });
 
   return !formSubmit ? <SignUpForm setformSubmit={setformSubmit} /> : <FormSubmitText />;
 };
