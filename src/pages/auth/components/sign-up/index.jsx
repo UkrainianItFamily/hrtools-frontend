@@ -181,14 +181,8 @@ const SignUp = () => {
   const [formSubmit, setformSubmit] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const data = {
-      name: 'test1',
-      lastname: 'test1',
-    };
-    // Оновлюємо заголовок документа, використовуючи API браузера
-    dispatch(authActions.createUser(data));
-  });
+  // example dispatch
+  // dispatch(authActions.createUser(data));
 
   return !formSubmit ? <SignUpForm setformSubmit={setformSubmit} /> : <FormSubmitText />;
 };
