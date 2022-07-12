@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import {
   AsideMenu,
+  Footer,
   Header,
   JobInfo,
   PersonalInfo,
@@ -20,6 +21,7 @@ const UserProfile = () => (
         <Route path="timeoff" element={<TimeOffInfo />} />
       </Routes>
     </S.Board>
+    <Footer />
   </S.Main>
 );
 

@@ -5,7 +5,7 @@ import { menuItems } from 'src/constants';
 import * as S from '../../../styles';
 
 const MainMenu = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState(10);
+  const [activeMenuItem, setActiveMenuItem] = useState(0);
   const onClickMenuItem = (index) => {
     setActiveMenuItem(index);
   };

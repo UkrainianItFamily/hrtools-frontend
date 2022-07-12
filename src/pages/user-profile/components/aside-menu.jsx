@@ -81,19 +81,15 @@ const AsideMenu = () => (
       </S.AsideMenuItem>
     </S.AsideMenuBlock>
     <S.AsideMenuBlock>
-      <S.AsideMenuItemTitle>Hire Date</S.AsideMenuItemTitle>
-      <S.AsideMenuItemSubtitle>Sep 30, 2017</S.AsideMenuItemSubtitle>
-      <S.AsideMenuItemText>3y-6m-20d</S.AsideMenuItemText>
-    </S.AsideMenuBlock>
-    <S.AsideMenuBlock>
       <S.AsideMenuItem>
-        <svg height="16px" width="16px" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+        <svg height="16px" viewBox="0 0 48 48" width="16px" xmlns="http://www.w3.org/2000/svg">
           <path
             fill="#9a9a9a"
-            d="M416 127.1h-58.23l9.789-58.74c2.906-17.44-8.875-33.92-26.3-36.83c-17.53-2.875-33.92 8.891-36.83 26.3L292.9 127.1H197.8l9.789-58.74c2.906-17.44-8.875-33.92-26.3-36.83c-17.53-2.875-33.92 8.891-36.83 26.3L132.9 127.1H64c-17.67 0-32 14.33-32 32C32 177.7 46.33 191.1 64 191.1h58.23l-21.33 128H32c-17.67 0-32 14.33-32 32c0 17.67 14.33 31.1 32 31.1h58.23l-9.789 58.74c-2.906 17.44 8.875 33.92 26.3 36.83C108.5 479.9 110.3 480 112 480c15.36 0 28.92-11.09 31.53-26.73l11.54-69.27h95.12l-9.789 58.74c-2.906 17.44 8.875 33.92 26.3 36.83C268.5 479.9 270.3 480 272 480c15.36 0 28.92-11.09 31.53-26.73l11.54-69.27H384c17.67 0 32-14.33 32-31.1c0-17.67-14.33-32-32-32h-58.23l21.33-128H416c17.67 0 32-14.32 32-31.1C448 142.3 433.7 127.1 416 127.1zM260.9 319.1H165.8L187.1 191.1h95.12L260.9 319.1z"
+            d="M24 4c-7.73 0-14 6.27-14 14 0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14zm0 19c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"
           />
+          <path d="M0 0h48v48h-48z" fill="none" />
         </svg>
-        <S.AsideMenuItemText>5</S.AsideMenuItemText>
+        <S.AsideMenuItemText>Lviv, UA</S.AsideMenuItemText>
       </S.AsideMenuItem>
       <S.AsideMenuItem>
         <svg height="16px" viewBox="0 0 30 36" width="16px" xmlns="http://www.w3.org/2000/svg">
@@ -157,175 +153,13 @@ const AsideMenu = () => (
             </g>
           </g>
         </svg>
-        <S.AsideMenuItemText>Operations</S.AsideMenuItemText>
-      </S.AsideMenuItem>
-      <S.AsideMenuItem>
-        <svg
-          height="16px"
-          width="16px"
-          enableBackground="new 0 0 52 52"
-          id="Layer_1"
-          version="1.1"
-          viewBox="0 0 52 52"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <polygon
-            fill="#9a9a9a"
-            points="44.9958496,31.2999878 44.9958496,14.819397 32,14.819397 32,9 20,9 20,14.819397 6.9958496,14.819397   6.9958496,31.2999878 2,31.2999878 2,43 14,43 14,31.2999878 8.9958496,31.2999878 8.9958496,16.819397 20,16.819397 20,18.7600098   32,18.7600098 32,16.819397 42.9958496,16.819397 42.9958496,31.2999878 38,31.2999878 38,43 50,43 50,31.2999878 "
-          />
-        </svg>
-        <S.AsideMenuItemText>Europe</S.AsideMenuItemText>
-      </S.AsideMenuItem>
-      <S.AsideMenuItem>
-        <svg height="16px" viewBox="0 0 48 48" width="16px" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill="#9a9a9a"
-            d="M24 4c-7.73 0-14 6.27-14 14 0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14zm0 19c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"
-          />
-          <path d="M0 0h48v48h-48z" fill="none" />
-        </svg>
-        <S.AsideMenuItemText>London, UK</S.AsideMenuItemText>
+        <S.AsideMenuItemText>Web Design</S.AsideMenuItemText>
       </S.AsideMenuItem>
     </S.AsideMenuBlock>
     <S.AsideMenuBlock>
-      <S.AsideMenuItemTitle>Direct Reports</S.AsideMenuItemTitle>
-      <S.AsideMenuItem>
-        <svg
-          height="16px"
-          width="16px"
-          enableBackground="new 0 0 24 24"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="info" />
-          <g id="icons">
-            <path
-              fill="#9a9a9a"
-              d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,4c2.2,0,4,2.2,4,5s-1.8,5-4,5   s-4-2.2-4-5S9.8,4,12,4z M18.6,19.5C16.9,21,14.5,22,12,22s-4.9-1-6.6-2.5c-0.4-0.4-0.5-1-0.1-1.4c1.1-1.3,2.6-2.2,4.2-2.7   c0.8,0.4,1.6,0.6,2.5,0.6s1.7-0.2,2.5-0.6c1.7,0.5,3.1,1.4,4.2,2.7C19.1,18.5,19.1,19.1,18.6,19.5z"
-              id="user2"
-            />
-          </g>
-        </svg>
-        <S.AsideMenuItemText>Cheryl Barnet</S.AsideMenuItemText>
-      </S.AsideMenuItem>
-      <S.AsideMenuItem>
-        <svg
-          height="16px"
-          width="16px"
-          enableBackground="new 0 0 24 24"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="info" />
-          <g id="icons">
-            <path
-              fill="#9a9a9a"
-              d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,4c2.2,0,4,2.2,4,5s-1.8,5-4,5   s-4-2.2-4-5S9.8,4,12,4z M18.6,19.5C16.9,21,14.5,22,12,22s-4.9-1-6.6-2.5c-0.4-0.4-0.5-1-0.1-1.4c1.1-1.3,2.6-2.2,4.2-2.7   c0.8,0.4,1.6,0.6,2.5,0.6s1.7-0.2,2.5-0.6c1.7,0.5,3.1,1.4,4.2,2.7C19.1,18.5,19.1,19.1,18.6,19.5z"
-              id="user2"
-            />
-          </g>
-        </svg>
-        <S.AsideMenuItemText>Daniel Vance</S.AsideMenuItemText>
-      </S.AsideMenuItem>
-      <S.AsideMenuItem>
-        <svg
-          height="16px"
-          width="16px"
-          enableBackground="new 0 0 24 24"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="info" />
-          <g id="icons">
-            <path
-              fill="#9a9a9a"
-              d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,4c2.2,0,4,2.2,4,5s-1.8,5-4,5   s-4-2.2-4-5S9.8,4,12,4z M18.6,19.5C16.9,21,14.5,22,12,22s-4.9-1-6.6-2.5c-0.4-0.4-0.5-1-0.1-1.4c1.1-1.3,2.6-2.2,4.2-2.7   c0.8,0.4,1.6,0.6,2.5,0.6s1.7-0.2,2.5-0.6c1.7,0.5,3.1,1.4,4.2,2.7C19.1,18.5,19.1,19.1,18.6,19.5z"
-              id="user2"
-            />
-          </g>
-        </svg>
-        <S.AsideMenuItemText>Dorothy Chou</S.AsideMenuItemText>
-      </S.AsideMenuItem>
-      <S.AsideMenuItem>
-        <svg
-          height="16px"
-          width="16px"
-          enableBackground="new 0 0 24 24"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="info" />
-          <g id="icons">
-            <path
-              fill="#9a9a9a"
-              d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,4c2.2,0,4,2.2,4,5s-1.8,5-4,5   s-4-2.2-4-5S9.8,4,12,4z M18.6,19.5C16.9,21,14.5,22,12,22s-4.9-1-6.6-2.5c-0.4-0.4-0.5-1-0.1-1.4c1.1-1.3,2.6-2.2,4.2-2.7   c0.8,0.4,1.6,0.6,2.5,0.6s1.7-0.2,2.5-0.6c1.7,0.5,3.1,1.4,4.2,2.7C19.1,18.5,19.1,19.1,18.6,19.5z"
-              id="user2"
-            />
-          </g>
-        </svg>
-        <S.AsideMenuItemText>Eric Pasture</S.AsideMenuItemText>
-      </S.AsideMenuItem>
-      <S.AsideMenuItem>
-        <svg
-          height="16px"
-          width="16px"
-          enableBackground="new 0 0 24 24"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="info" />
-          <g id="icons">
-            <path
-              fill="#9a9a9a"
-              d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,4c2.2,0,4,2.2,4,5s-1.8,5-4,5   s-4-2.2-4-5S9.8,4,12,4z M18.6,19.5C16.9,21,14.5,22,12,22s-4.9-1-6.6-2.5c-0.4-0.4-0.5-1-0.1-1.4c1.1-1.3,2.6-2.2,4.2-2.7   c0.8,0.4,1.6,0.6,2.5,0.6s1.7-0.2,2.5-0.6c1.7,0.5,3.1,1.4,4.2,2.7C19.1,18.5,19.1,19.1,18.6,19.5z"
-              id="user2"
-            />
-          </g>
-        </svg>
-        <S.AsideMenuItemText>Jake Ryan</S.AsideMenuItemText>
-      </S.AsideMenuItem>
-      <S.AsideMenuItem>
-        <svg
-          height="16px"
-          width="16px"
-          enableBackground="new 0 0 24 24"
-          id="Layer_1"
-          version="1.0"
-          viewBox="0 0 24 24"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <g>
-              <path
-                fill="#9a9a9a"
-                d="M16.5,14c-1.5,0-2.7,0.4-3.6,0.9c1.4,1.2,2,2.6,2.1,2.7l0.1,0.2V20h8v-2C23,18,21.4,14,16.5,14z"
-              />
-            </g>
-            <g>
-              <circle fill="#9a9a9a" cx="16.5" cy="8.5" r="3.5" />
-            </g>
-          </g>
-          <g>
-            <path
-              fill="#9a9a9a"
-              d="M4,8.5C4,6.6,5.6,5,7.5,5S11,6.6,11,8.5c0,1.9-1.6,3.5-3.5,3.5S4,10.4,4,8.5z M7.5,14C2.6,14,1,18,1,18v2h13v-2   C14,18,12.4,14,7.5,14z"
-            />
-          </g>
-        </svg>
-        <S.AsideMenuItemText>4 more...</S.AsideMenuItemText>
-      </S.AsideMenuItem>
+      <S.AsideMenuItemTitle>Hire Date</S.AsideMenuItemTitle>
+      <S.AsideMenuItemSubtitle>Sep 30, 2017</S.AsideMenuItemSubtitle>
+      <S.AsideMenuItemText>3y-6m-20d</S.AsideMenuItemText>
     </S.AsideMenuBlock>
   </S.AsideNav>
 );

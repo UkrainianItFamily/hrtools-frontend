@@ -8,15 +8,18 @@ const Header = () => {
   const matches = useMediaQuery('(max-width:995px)');
   return (
     <S.Header>
+      <S.LogoContainer>
+        <S.Logo>
+          <S.LogoSpecial>HR</S.LogoSpecial>
+          <S.LogoRegular>tools</S.LogoRegular>
+        </S.Logo>
+      </S.LogoContainer>
+      <S.PageTitle>Персональний кабінет</S.PageTitle>
       <S.AvatarContainer>
         <S.Avatar src={images.userPhoto} />
       </S.AvatarContainer>
       <S.TitleContainer>
         <S.Title>Mary Stone</S.Title>
-        <S.TitleButtons>
-          <S.HeaderButton>Request a Change</S.HeaderButton>
-          <S.HeaderButton>Gear</S.HeaderButton>
-        </S.TitleButtons>
       </S.TitleContainer>
       {!matches && (
         <S.MainNavigation>
