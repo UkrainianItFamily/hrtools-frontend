@@ -6,3 +6,9 @@ export const createUser = createAsyncThunk('auth/create-user', async (data) => {
 
   return result;
 });
+
+export const authUser = createAsyncThunk('auth/auth-user', async (data) => {
+  const result = await authService.signIn(data);
+
+  return result;
+});
