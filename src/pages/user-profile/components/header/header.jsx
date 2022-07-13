@@ -1,11 +1,10 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { images } from 'src/assets';
 
 import * as S from '../../styles';
-import { MainMenu, MobileNavbar } from './components';
+import { MainMenu, MobileNavbar, UserAvatar } from './components';
 
 const Header = () => {
-  const matches = useMediaQuery('(max-width:995px)');
+  const matches = useMediaQuery('(max-width:1182px)');
   return (
     <S.Header>
       <S.LogoContainer>
@@ -15,9 +14,7 @@ const Header = () => {
         </S.Logo>
       </S.LogoContainer>
       <S.PageTitle>Персональний кабінет</S.PageTitle>
-      <S.AvatarContainer>
-        <S.Avatar src={images.userPhoto} />
-      </S.AvatarContainer>
+      <UserAvatar />
       <S.TitleContainer>
         <S.Title>Mary Stone</S.Title>
       </S.TitleContainer>

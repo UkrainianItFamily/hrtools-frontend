@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { images } from 'src/assets';
 import { ExampleCommonComponent } from 'src/components';
-import { UserProfile } from 'src/pages';
+import UserProfile from 'src/pages';
 
 const App = () => (
   <Routes>

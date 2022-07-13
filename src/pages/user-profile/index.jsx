@@ -11,18 +11,20 @@ import {
 import * as S from './styles';
 
 const UserProfile = () => (
-  <S.Main>
+  <>
     <Header />
-    <AsideMenu />
-    <S.Board>
-      <Routes>
-        <Route path="personal" element={<PersonalInfo />} />
-        <Route path="job" element={<JobInfo />} />
-        <Route path="timeoff" element={<TimeOffInfo />} />
-      </Routes>
-    </S.Board>
-    <Footer />
-  </S.Main>
+    <S.Main>
+      <AsideMenu />
+      <S.Board>
+        <Routes>
+          <Route path="personal" element={<PersonalInfo />} />
+          <Route path="job" element={<JobInfo />} />
+          <Route path="timeoff" element={<TimeOffInfo />} />
+        </Routes>
+      </S.Board>
+      <Footer />
+    </S.Main>
+  </>
 );
 
 export default UserProfile;
