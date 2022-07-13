@@ -1,14 +1,16 @@
 import { Button, TextField } from '@mui/material';
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FlexContainer } from 'src/components/';
+import { authActions } from 'src/store/actions';
 import * as Yup from 'yup';
 
 import * as S from '../../styles';
 
-const SignupSchema = Yup.object().shape({
+const SignUpSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Не менше 2 символів')
     .max(50, 'Не більше 50 символів')
@@ -47,7 +49,7 @@ const SignUpForm = ({ setformSubmit }) => {
           password: '',
           passwordCheck: '',
         }}
-        validationSchema={SignupSchema}
+        validationSchema={SignUpSchema}
         onSubmit={(values) => handleRequest(values)}
       >
         {({
@@ -62,6 +64,50 @@ const SignUpForm = ({ setformSubmit }) => {
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit}>
+            <S.FormRow>
+              <TextField
+                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                fullWidth
+                label="E-mail"
+                name="email"
+                id="email"
+                variant="outlined"
+                error={errors.email && touched.email}
+                helperText={errors.email && touched.email && errors.email}
+              />
+            </S.FormRow>
+            <S.FormRow>
+              <TextField
+                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                fullWidth
+                label="Пароль"
+                type="password"
+                name="password"
+                id="password"
+                variant="outlined"
+                error={errors.password && touched.password}
+                helperText={errors.password && touched.password && errors.password}
+              />
+            </S.FormRow>
+            <S.FormRow>
+              <TextField
+                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                fullWidth
+                label="Підтвердити пароль"
+                type="password"
+                name="passwordCheck"
+                id="passwordCheck"
+                variant="outlined"
+                error={errors.passwordCheck && touched.passwordCheck}
+                helperText={errors.passwordCheck && touched.passwordCheck && errors.passwordCheck}
+              />
+            </S.FormRow>
             <S.FormRow>
               <TextField
                 onChange={handleChange}
@@ -96,20 +142,6 @@ const SignUpForm = ({ setformSubmit }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 fullWidth
-                label="Ваша електронна адреса"
-                name="email"
-                id="email"
-                variant="outlined"
-                error={errors.email && touched.email}
-                helperText={errors.email && touched.email && errors.email}
-              />
-            </S.FormRow>
-            <S.FormRow>
-              <TextField
-                required
-                onChange={handleChange}
-                onBlur={handleBlur}
-                fullWidth
                 label="Номер телефону"
                 name="phone"
                 id="phone"
@@ -119,34 +151,9 @@ const SignUpForm = ({ setformSubmit }) => {
               />
             </S.FormRow>
             <S.FormRow>
-              <TextField
-                required
-                onChange={handleChange}
-                onBlur={handleBlur}
-                fullWidth
-                label="Пароль"
-                type="password"
-                name="password"
-                id="password"
-                variant="outlined"
-                error={errors.password && touched.password}
-                helperText={errors.password && touched.password && errors.password}
-              />
-            </S.FormRow>
-            <S.FormRow>
-              <TextField
-                required
-                onChange={handleChange}
-                onBlur={handleBlur}
-                fullWidth
-                label="Підтвердити пароль"
-                type="password"
-                name="passwordCheck"
-                id="passwordCheck"
-                variant="outlined"
-                error={errors.passwordCheck && touched.passwordCheck}
-                helperText={errors.passwordCheck && touched.passwordCheck && errors.passwordCheck}
-              />
+              <FlexContainer $justify="flex-end">
+                <S.StyledLink to="/auth/">У вас є аккаунт? Увійти</S.StyledLink>
+              </FlexContainer>
             </S.FormRow>
             <S.FormRow>
               <Button
@@ -165,6 +172,7 @@ const SignUpForm = ({ setformSubmit }) => {
     </>
   );
 };
+
 const FormSubmitText = () => (
   <>
     <S.AuthTitle>Лист із підтведженням було відправленно на ваш email</S.AuthTitle>
@@ -175,12 +183,19 @@ const FormSubmitText = () => (
     </FlexContainer>
   </>
 );
+
 const SignUp = () => {
   const [formSubmit, setformSubmit] = useState(false);
+  const dispatch = useDispatch();
+
+  // example dispatch
+  // dispatch(authActions.createUser(data));
 
   return !formSubmit ? <SignUpForm setformSubmit={setformSubmit} /> : <FormSubmitText />;
 };
+
 SignUpForm.propTypes = {
   setformSubmit: PropTypes.func.isRequired,
 };
+
 export default SignUp;
