@@ -32,10 +32,14 @@ const SignUpSchema = Yup.object().shape({
     .oneOf([Yup.ref('password'), null], 'Паролі не збігаються'),
 });
 
-const SignUpForm = ({ setformSubmit }) => {
+const SignUpForm = ({ setformSubmit, setformData }) => {
+  const dispatch = useDispatch();
+
   const handleRequest = (values) => {
     console.log(values);
     setformSubmit(true);
+    setformData(values);
+    dispatch(authActions.createUser(values));
   };
   return (
     <>
@@ -173,29 +177,45 @@ const SignUpForm = ({ setformSubmit }) => {
   );
 };
 
-const FormSubmitText = () => (
-  <>
-    <S.AuthTitle>Лист із підтведженням було відправленно на ваш email</S.AuthTitle>
-    <FlexContainer $justify="center">
-      <NavLink to="/">
-        <Button variant="contained">На головну</Button>
-      </NavLink>
-    </FlexContainer>
-  </>
-);
+const FormSubmitText = ({ formData }) => {
+  const dispatch = useDispatch();
+
+  const handleRequest = () => {
+    console.log(formData);
+    dispatch(authActions.createUser(formData));
+  };
+  return (
+    <>
+      <S.AuthTitle>
+        Будь ласка, підтвердіть свою адресу електронної пошти. Для цього перейдіть за посиланням з
+        листа, що вам було надіслано на пошту
+      </S.AuthTitle>
+      <FlexContainer $justify="center">
+        <Button onClick={handleRequest} variant="contained">
+          Надіслати лист ще раз
+        </Button>
+      </FlexContainer>
+    </>
+  );
+};
 
 const SignUp = () => {
   const [formSubmit, setformSubmit] = useState(false);
-  const dispatch = useDispatch();
+  const [formData, setformData] = useState({});
 
-  // example dispatch
-  // dispatch(authActions.createUser(data));
-
-  return !formSubmit ? <SignUpForm setformSubmit={setformSubmit} /> : <FormSubmitText />;
+  return !formSubmit ? (
+    <SignUpForm setformSubmit={setformSubmit} setformData={setformData} />
+  ) : (
+    <FormSubmitText formData={formData} />
+  );
 };
 
+FormSubmitText.prototype = {
+  formData: PropTypes.object.isRequired,
+};
 SignUpForm.propTypes = {
   setformSubmit: PropTypes.func.isRequired,
+  setformData: PropTypes.func.isRequired,
 };
 
 export default SignUp;
