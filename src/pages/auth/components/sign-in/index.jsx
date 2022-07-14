@@ -1,5 +1,5 @@
 import { Button, TextField } from '@mui/material';
-import { Formik } from 'formik';
+import { useFormik } from 'formik';
 import React from 'react';
 import { FlexContainer } from 'src/components/';
 import * as Yup from 'yup';
@@ -20,79 +20,67 @@ const SignIn = () => {
   const handleRequest = (values) => {
     console.log(values);
   };
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+
+      password: '',
+    },
+    validationSchema: SignInSchema,
+    onSubmit: (values) => handleRequest(values),
+  });
   return (
     <>
       <S.AuthTitle>Авторизація</S.AuthTitle>
-      <Formik
-        initialValues={{
-          email: '',
 
-          password: '',
-        }}
-        validationSchema={SignInSchema}
-        onSubmit={(values) => handleRequest(values)}
-      >
-        {({
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isValid,
-          dirty,
-          isSubmitting,
-          /* and other goodies */
-        }) => (
-          <form onSubmit={handleSubmit}>
-            <S.FormRow>
-              <TextField
-                required
-                onChange={handleChange}
-                onBlur={handleBlur}
-                fullWidth
-                label="E-mail"
-                name="email"
-                id="email"
-                variant="outlined"
-                error={errors.email && touched.email}
-                helperText={errors.email && touched.email && errors.email}
-              />
-            </S.FormRow>
-            <S.FormRow>
-              <TextField
-                required
-                onChange={handleChange}
-                onBlur={handleBlur}
-                fullWidth
-                label="Пароль"
-                type="password"
-                name="password"
-                id="password"
-                variant="outlined"
-                error={errors.password && touched.password}
-                helperText={errors.password && touched.password && errors.password}
-              />
-            </S.FormRow>
-            <S.FormRow>
-              <FlexContainer $justify="space-between">
-                <S.StyledLink to="/auth/sign-up">Реєстрація</S.StyledLink>
-                <S.StyledLink to="/auth/forgot-pass">Забули пароль?</S.StyledLink>
-              </FlexContainer>
-            </S.FormRow>
-            <S.FormRow>
-              <Button
-                variant="contained"
-                type="submit"
-                fullWidth
-                size="large"
-                disabled={!(isValid && dirty) || isSubmitting}
-              >
-                Увійти
-              </Button>
-            </S.FormRow>
-          </form>
-        )}
-      </Formik>
+      <form onSubmit={formik.handleSubmit}>
+        <S.FormRow>
+          <TextField
+            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+            label="E-mail"
+            name="email"
+            id="email"
+            variant="outlined"
+            error={formik.errors.email && formik.touched.email}
+            helperText={formik.errors.email && formik.touched.email && formik.errors.email}
+          />
+        </S.FormRow>
+        <S.FormRow>
+          <TextField
+            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            fullWidth
+            label="Пароль"
+            type="password"
+            name="password"
+            id="password"
+            variant="outlined"
+            error={formik.errors.password && formik.touched.password}
+            helperText={formik.errors.password && formik.touched.password && formik.errors.password}
+          />
+        </S.FormRow>
+        <S.FormRow>
+          <FlexContainer $justify="space-between">
+            <S.StyledLink to="/auth/sign-up">Реєстрація</S.StyledLink>
+            <S.StyledLink to="/auth/forgot-pass">Забули пароль?</S.StyledLink>
+          </FlexContainer>
+        </S.FormRow>
+        <S.FormRow>
+          <Button
+            variant="contained"
+            type="submit"
+            fullWidth
+            size="large"
+            disabled={!(formik.isValid && formik.dirty) || formik.isSubmitting}
+          >
+            Увійти
+          </Button>
+        </S.FormRow>
+      </form>
     </>
   );
 };
