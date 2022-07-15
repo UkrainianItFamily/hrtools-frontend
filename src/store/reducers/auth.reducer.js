@@ -6,7 +6,7 @@ const { reducer } = createSlice({
   name: 'auth',
   initialState: {
     user: undefined,
-    createUserStatus: undefined,
+    errors: false,
     waiter: false,
   },
   extraReducers: (builder) => {
@@ -14,14 +14,16 @@ const { reducer } = createSlice({
       // createUser
       .addCase(authActions.createUser.pending, (state) => {
         state.waiter = true;
+        state.errors = false;
       })
       .addCase(authActions.createUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.waiter = false;
+        state.errors = false;
       })
       .addCase(authActions.createUser.rejected, (state, action) => {
         state.waiter = false;
-        state.createUserStatus = action.error.code;
+        state.errors = true;
       })
 
       // authUser

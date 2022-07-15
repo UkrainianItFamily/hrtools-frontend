@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { ForgotPass, ResetPass, SignConfirm, SignIn, SignUp } from 'src/pages/auth/components';
 
+import { ForgotPass, ResetPass, SignConfirm, SignIn, SignUp } from './components';
 import * as S from './styles';
 
 const Auth = () => (
