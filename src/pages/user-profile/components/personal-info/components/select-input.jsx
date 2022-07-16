@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { InputLabel, MenuItem, Select } from '@mui/material';
 
-import * as S from '../styles';
+import * as S from '../../../styles';
 
 const SelectInput = ({ name, list = [], value, onChange, label }) => (
   <S.InputContainer>

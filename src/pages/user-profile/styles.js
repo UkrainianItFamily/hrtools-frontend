@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-
 /* main container, holding aside amd board */
 
 export const Main = styled.div`
@@ -253,7 +252,7 @@ export const MainInputContainer = styled.form`
     'inputfourteen . inputfifteen'
     'blockfivetitle blockfivetitle blockfivetitle'
     'inputsixteen . inputseventeen'
-    'inputeighteen . .'
+    'inputeighteen inputeighteen inputeighteen'
     '. . .'
     '. . .'
     '. . submitbutton';
@@ -374,6 +373,8 @@ export const InputSeventeenWrapper = styled.div`
 export const InputEighteenWrapper = styled.div`
   display: flex;
   grid-area: inputeighteen;
+  span: 3;
+  gap: 16px;
 `;
 
 export const InputSubmitWrapper = styled.div`
@@ -435,6 +436,56 @@ export const fileInputInput = styled.input`
 
 export const fileInpurHelperText = styled.span`
   font-size: 12px;
+`;
+
+export const fileInputList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+`;
+
+export const fileInputListItem = styled.li`
+  font-size: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  width: 50px;
+`;
+
+export const fileInputListFileIcon = styled.img`
+  width: 50px;
+  height: auto;
+`;
+
+export const fileInputListFileDeleteIcon = styled.img`
+  width: 18px;
+  height: auto;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+`;
+
+export const fileInputListItemText = styled.span`
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 12px;
+  word-break: break-word;
+  text-align: center;
+`;
+
+export const fileInputListActionsContainer = styled.div`
+  position: absolute;
+  top: -10px;
+  right: -10px;
+`;
+
+export const fileSpinnerItem = styled.img`
+  width: 18px;
+  height: auto;
 `;
 
 /* footer container, holding all footer components */

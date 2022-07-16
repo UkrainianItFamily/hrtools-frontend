@@ -3,10 +3,8 @@ import { useFormik } from 'formik';
 import { useState } from 'react';
 import * as yup from 'yup';
 
-import * as S from '../styles';
-import { FileInput } from '.';
-import SelectInput from './select-input';
-import TextInput from './text-input';
+import * as S from '../../styles';
+import { FileInput, SelectInput, TextInput, UploadedFilesList } from './components';
 
 const validationSchema = yup.object({
   email: yup
@@ -97,9 +95,17 @@ const maritalStatus = [
 ];
 
 const PersonalInfo = (props) => {
-  const [files, setFiles] = useState({
-    name: 'my resume.doc',
-  });
+  const [files, setFiles] = useState([
+    {
+      name: 'my resume.doc',
+    },
+  ]);
+
+  console.log(files);
+
+  const removeFile = (filename) => {
+    setFiles(files.filter((file) => file.name !== filename));
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -117,7 +123,6 @@ const PersonalInfo = (props) => {
     },
   });
 
-  console.log('formik: ', formik);
   return (
     <div>
       <S.MainInputContainer onSubmit={formik.handleSubmit}>
@@ -308,7 +313,8 @@ const PersonalInfo = (props) => {
           />
         </S.InputSeventeenWrapper>
         <S.InputEighteenWrapper>
-          <FileInput files={files} setFiles={setFiles} />
+          <FileInput files={files} setFiles={setFiles} removeFile={removeFile} />
+          <UploadedFilesList files={files} removeFile={removeFile} />
         </S.InputEighteenWrapper>
         <S.InputSubmitWrapper>
           <Button color="primary" variant="contained" type="submit">

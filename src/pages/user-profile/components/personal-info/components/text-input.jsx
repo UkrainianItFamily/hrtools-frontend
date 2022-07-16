@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { InputLabel, TextField } from '@mui/material';
 
-import * as S from '../styles';
+import * as S from '../../../styles';
 
 const TextInput = ({ name, label, value, onChange, error, helperText, onBlur, type = 'text' }) => (
   <S.InputContainer>
