@@ -195,19 +195,22 @@ const FormSubmitText = ({ formData, authLoader }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let timeout;
-    if (seconds > 0) {
-      timeout = setTimeout(() => {
-        setSeconds(seconds - 1);
-      }, 1000);
-    } else {
-      setMailSended(false);
-    }
+    const sendTimer = setTimeout(
+      () =>
+        setSeconds((prev) => {
+          if (seconds > 0 && mailSended) {
+            return prev - 1;
+          }
+          setMailSended(false);
+          return 0;
+        }),
+      1000,
+    );
 
     return () => {
-      clearTimeout(timeout);
+      clearTimeout(sendTimer);
     };
-  }, [seconds]);
+  }, [seconds, mailSended]);
 
   const handleRequest = () => {
     dispatch(authActions.createUser(formData));
@@ -234,7 +237,7 @@ const FormSubmitText = ({ formData, authLoader }) => {
             <S.FormRow>
               <FlexContainer $justify="center">Повідомлення відправленно.</FlexContainer>
               <FlexContainer $justify="center">
-                Можна повторно надіслати лише раз на 10 секунд
+                Можна повторно надіслати лише раз на {seconds} секунд
               </FlexContainer>
             </S.FormRow>
           )}
@@ -251,7 +254,7 @@ const SignUp = () => {
   const authLoader = useSelector((state) => state.authReducer.waiter);
   const [formData, setformData] = useState({});
 
-  return !formSubmit ? (
+  return formSubmit ? (
     <SignUpForm
       setformSubmit={setformSubmit}
       setformData={setformData}
