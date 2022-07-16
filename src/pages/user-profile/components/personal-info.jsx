@@ -1,8 +1,10 @@
 import Button from '@mui/material/Button';
 import { useFormik } from 'formik';
+import { useState } from 'react';
 import * as yup from 'yup';
 
 import * as S from '../styles';
+import { FileInput } from '.';
 import SelectInput from './select-input';
 import TextInput from './text-input';
 
@@ -94,7 +96,11 @@ const maritalStatus = [
   },
 ];
 
-const PersonalInfo = () => {
+const PersonalInfo = (props) => {
+  const [files, setFiles] = useState({
+    name: 'my resume.doc',
+  });
+
   const formik = useFormik({
     initialValues: {
       // email: 'foobar@example.com',
@@ -301,6 +307,9 @@ const PersonalInfo = () => {
             helperText={formik.touched.facebookId && formik.errors.facebookId}
           />
         </S.InputSeventeenWrapper>
+        <S.InputEighteenWrapper>
+          <FileInput files={files} setFiles={setFiles} />
+        </S.InputEighteenWrapper>
         <S.InputSubmitWrapper>
           <Button color="primary" variant="contained" type="submit">
             Submit

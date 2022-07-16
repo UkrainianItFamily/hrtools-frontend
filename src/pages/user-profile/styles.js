@@ -253,7 +253,7 @@ export const MainInputContainer = styled.form`
     'inputfourteen . inputfifteen'
     'blockfivetitle blockfivetitle blockfivetitle'
     'inputsixteen . inputseventeen'
-    '. . .'
+    'inputeighteen . .'
     '. . .'
     '. . .'
     '. . submitbutton';
@@ -371,10 +371,70 @@ export const InputSeventeenWrapper = styled.div`
   grid-area: inputseventeen;
 `;
 
+export const InputEighteenWrapper = styled.div`
+  display: flex;
+  grid-area: inputeighteen;
+`;
+
 export const InputSubmitWrapper = styled.div`
   display: flex;
   grid-area: submitbutton;
   justify-content: end;
+`;
+
+/** * fileInput component styles ** */
+
+export const fileInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 72px;
+  align-items: center;
+`;
+
+export const fileInputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const fileInputIcon = styled.img`
+  width: 24px;
+  height: auto;
+`;
+
+export const fileInputButton = styled.button`
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 4px;
+  position: absolute;
+  cursor: pointer;
+  background-color: #547801;
+  &:hover {
+    background-color: #8db03e;
+  }
+`;
+
+export const fileInputInput = styled.input`
+  position: relative;
+  z-index: 2;
+  max-width: 210px;
+  cursor: pointer;
+  height: 52px;
+  opacity: 0;
+`;
+
+export const fileInpurHelperText = styled.span`
+  font-size: 12px;
 `;
 
 /* footer container, holding all footer components */
