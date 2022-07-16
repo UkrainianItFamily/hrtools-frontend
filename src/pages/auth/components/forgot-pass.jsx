@@ -10,7 +10,7 @@ const ForgotPassSchema = Yup.object().shape({
   email: Yup.string().email('Некоректна email адрасса').required("Обов'язкове поле"),
 });
 
-const forgotPass = () => {
+const ForgotPass = () => {
   const handleRequest = (values) => {
     console.log(values);
   };
@@ -64,4 +64,4 @@ const forgotPass = () => {
   );
 };
 
-export default forgotPass;
+export default ForgotPass;
