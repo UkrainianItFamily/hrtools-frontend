@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { exampleActions } from '../actions';
 
 const { reducer } = createSlice({
-  name: 'auth',
+  name: 'test',
   initialState: {
     login: undefined,
     createUserStatus: undefined,
