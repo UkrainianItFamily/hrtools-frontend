@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { createTheme } from '@mui/material/styles';
 
 export default css`
   // Reset css
@@ -36,4 +37,29 @@ export default css`
   textarea {
     white-space: revert;
   }
+  a:hover {
+    cursor: pointer;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
 `;
+
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#73c41d',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#969797',
+    },
+  },
+});
