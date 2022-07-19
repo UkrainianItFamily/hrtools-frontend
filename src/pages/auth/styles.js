@@ -65,3 +65,8 @@ export const StyledLink = styled(NavLink)`
     color: green;
   }
 `;
+
+export const AuthHeader = styled.div`
+  background-color: #eee;
+  padding: 15px;
+`;
