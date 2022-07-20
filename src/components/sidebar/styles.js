@@ -4,6 +4,15 @@ export const Sidebar = styled.div`
   max-width: 250px;
   width: 100%;
   margin-bottom: 25px;
+  @media (max-width: 1023px) {
+    max-width: initial;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const Avatar = styled.div((props) => ({
@@ -17,6 +26,15 @@ export const Avatar = styled.div((props) => ({
   backgroundPosition: 'center',
   border: '2px solid #fff',
   backgroundImage: `url(${props.img})`,
+  '@media (max-width: 1023px)': {
+    marginRight: '25px',
+    minWidth: '200px',
+    marginBottom: '0',
+  },
+  '@media (max-width: 600px)': {
+    margin: '0 auto',
+    marginBottom: '-50px',
+  },
 }));
 
 export const AvatarEdit = styled.button`
@@ -37,10 +55,22 @@ export const AvatarEdit = styled.button`
 export const SidebarWrap = styled.div`
   background-color: #e6e6e6;
   padding: 65px 15px 25px;
+  @media (max-width: 1023px) {
+    width: 100%;
+    padding-top: 25px;
+  }
+  @media (max-width: 600px) {
+    padding-top: 65px;
+  }
 `;
 
 export const Contacts = styled.div`
   margin-bottom: 25px;
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
 `;
 
 export const ContactsItem = styled.div`
@@ -48,14 +78,29 @@ export const ContactsItem = styled.div`
   margin-bottom: 15px;
   font-size: 16px;
   align-items: center;
+
   svg {
     margin-right: 5px;
+  }
+  @media (max-width: 1023px) {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 600px) {
+    font-size: 14px;
+    margin-right: 10px;
   }
 `;
 
 export const Data = styled.div`
   margin-bottom: 25px;
   font-weight: bold;
+  @media (max-width: 1023px) {
+    margin-bottom: 0;
+  }
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 export const DataItem = styled.div`

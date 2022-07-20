@@ -45,11 +45,23 @@ export default css`
   body {
     font-family: 'Roboto', sans-serif;
     color: #333;
+    min-width: 320px;
   }
 
   .flex-center {
     display: flex;
     justify-content: center;
+  }
+
+  @keyframes fadeinZoom {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 `;
 

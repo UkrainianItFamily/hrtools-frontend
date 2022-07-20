@@ -36,36 +36,41 @@ const Poll = () => (
         <ArrowForwardIcon />
       </S.MainTopLink>
     </S.MainTop>
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell align="left">Назва</TableCell>
-            <TableCell align="left">Дата</TableCell>
-            <TableCell align="left">Статус</TableCell>
-            <TableCell />
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.calories} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row">
-                <CheckCircleOutlineIcon />
-              </TableCell>
-              <TableCell align="left">{row.calories}</TableCell>
-              <TableCell align="left">{row.fat}</TableCell>
-              <TableCell align="left">{row.carbs}</TableCell>
-              <TableCell align="left">
-                <Link to="/">
-                  <Button variant="contained">Детальніше</Button>
-                </Link>
-              </TableCell>
+    <S.PollTable>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 500 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell />
+              <TableCell align="left">Назва</TableCell>
+              <TableCell align="left">Дата</TableCell>
+              <TableCell align="left">Статус</TableCell>
+              <TableCell />
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.calories}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  <CheckCircleOutlineIcon />
+                </TableCell>
+                <TableCell align="left">{row.calories}</TableCell>
+                <TableCell align="left">{row.fat}</TableCell>
+                <TableCell align="left">{row.carbs}</TableCell>
+                <TableCell align="left">
+                  <Link to="/">
+                    <Button variant="contained">Детальніше</Button>
+                  </Link>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </S.PollTable>
   </>
 );
 
