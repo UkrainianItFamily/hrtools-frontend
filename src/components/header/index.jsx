@@ -22,7 +22,7 @@ const Header = ({ pageName }) => {
           <S.HeaderRight>
             <S.Menu className={menuToggle ? 'active' : ''}>
               <MainMenu />
-              <NavLink to="auth/exit">
+              <NavLink to="/auth/exit">
                 <Button variant="contained">Вихід</Button>
               </NavLink>
               <S.MenuIconButton

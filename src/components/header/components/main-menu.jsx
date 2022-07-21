@@ -6,9 +6,9 @@ import * as S from '../styles';
 const MainMenu = () => (
   <S.HeaderNav>
     <ul>
-      {menuItems.map((item, index) => (
+      {menuItems.map((item) => (
         <li key={item.id}>
-          <NavLink to={item.to}>{item.name}</NavLink>
+          <NavLink to={`/${item.to}`}>{item.name}</NavLink>
         </li>
       ))}
     </ul>

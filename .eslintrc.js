@@ -16,7 +16,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
