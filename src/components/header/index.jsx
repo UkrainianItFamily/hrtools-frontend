@@ -2,7 +2,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button } from '@mui/material';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Logo } from 'src/components';
 import * as GS from 'src/global-styles';
@@ -12,6 +12,15 @@ import * as S from './styles';
 
 const Header = ({ pageName }) => {
   const [menuToggle, setMenuToggle] = useState(false);
+
+  useEffect(() => {
+    if (menuToggle) {
+      document.querySelector('body').style.overflow = 'hidden';
+    } else {
+      document.querySelector('body').style.overflow = '';
+    }
+  }, [menuToggle]);
+
   return (
     <S.Header>
       <GS.Wrap>
