@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { createTheme } from '@mui/material/styles';
 
 export default css`
@@ -44,12 +45,41 @@ export default css`
   body {
     font-family: 'Roboto', sans-serif;
     color: #333;
+    min-width: 320px;
   }
 
   .flex-center {
     display: flex;
     justify-content: center;
   }
+
+  @keyframes fadeinZoom {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+`;
+
+export const MainWrap = styled.div`
+  max-width: 1200px;
+  margin: 15px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 1200px) {
+    margin: 15px;
+  }
+`;
+
+export const Wrap = styled.div`
+  max-width: 1024px;
+  padding: 0 15px;
+  margin: 0 auto;
 `;
 
 export const theme = createTheme({

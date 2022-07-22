@@ -1,16 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
-import { ExampleCommonComponent, TestNav } from 'src/components';
-import { Auth, NotFound } from 'src/pages';
+import { Auth, MainPage, NotFound, Personal } from 'src/pages';
 
 const App = () => (
-  <>
-    <TestNav />
-    <Routes>
-      <Route path="/" element={<ExampleCommonComponent />} />
-      <Route path="auth/*" element={<Auth />} />
-      <Route path="/*" element={<NotFound />} />
-    </Routes>
-  </>
+  <Routes>
+    <Route path="/" element={<MainPage />} />
+    <Route path="auth/*" element={<Auth />} />
+    <Route path="Personal/*" element={<Personal />} />
+    <Route path="/*" element={<NotFound />} />
+  </Routes>
 );
 
 export default App;

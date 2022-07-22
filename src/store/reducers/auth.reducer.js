@@ -23,7 +23,7 @@ const { reducer } = createSlice({
       })
       .addCase(authActions.createUser.rejected, (state, action) => {
         state.waiter = false;
-        state.errors = true;
+        state.errors = action.payload.errors;
       })
 
       // authUser
