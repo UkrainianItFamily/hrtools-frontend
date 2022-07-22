@@ -1,4 +1,3 @@
-export { default as ExampleCommonComponent } from './example-common-component';
 export { default as FieldMask } from './field-mask';
 export { default as FlexContainer } from './flex-сontainer';
 export { default as Footer } from './footer';

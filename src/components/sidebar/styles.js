@@ -15,27 +15,27 @@ export const Sidebar = styled.div`
   }
 `;
 
-export const Avatar = styled.div((props) => ({
-  margin: '0 auto',
-  marginBottom: '-50px',
-  position: 'relative',
-  borderRadius: '100%',
-  width: '200px',
-  height: '200px',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  border: '2px solid #fff',
-  backgroundImage: `url(${props.img})`,
-  '@media (max-width: 1023px)': {
-    marginRight: '25px',
-    minWidth: '200px',
-    marginBottom: '0',
-  },
-  '@media (max-width: 600px)': {
-    margin: '0 auto',
-    marginBottom: '-50px',
-  },
-}));
+export const Avatar = styled.div`
+  margin: 0 auto;
+  margin-bottom: -50px;
+  position: relative;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  background-image: url(${({ img }) => img});
+  @media (max-width: 1023px) {
+    margin-right: 25px;
+    min-width: 200px;
+    margin-bottom: 0;
+  }
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    margin-bottom: -50px;
+  }
+`;
 
 export const AvatarEdit = styled.button`
   position: absolute;

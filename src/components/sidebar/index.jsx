@@ -4,7 +4,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import WorkIcon from '@mui/icons-material/Work';
-import { Button } from '@mui/material';
 import { exampleJpg } from 'src/assets/images';
 
 import * as S from './styles';

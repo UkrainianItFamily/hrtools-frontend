@@ -1,39 +1,11 @@
-import {
-  Box,
-  FormControl,
-  Grid,
-  InputLabel,
-  InputMask,
-  MenuItem,
-  Select,
-  TextField,
-} from '@mui/material';
+import { Box, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-import { FieldMask, SelectInput } from 'src/components';
+import { FieldMask } from 'src/components';
+import { genderList, maritalStatus } from 'src/constants';
 import * as yup from 'yup';
 
 import * as S from '../styles';
 
-const genderList = [
-  {
-    label: 'чоловіча',
-    value: 'male',
-  },
-  {
-    label: 'жіноча',
-    value: 'female',
-  },
-];
-const maritalStatus = [
-  {
-    label: 'В шлюбі',
-    value: '1',
-  },
-  {
-    label: 'Не в шлюбі',
-    value: '2',
-  },
-];
 const validationSchema = yup.object({
   surname: yup
     .string('')
@@ -72,7 +44,7 @@ const PersonalForm = () => {
     },
     validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(JSON.stringify(values, null, 2));
     },
   });
 
