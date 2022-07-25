@@ -1,8 +1,10 @@
 # HRTools | Frontend
 
+## Install
+
 To work with the application, you need to perform the following steps:
 
-### Install corepack for Yarn package manager
+1. Install `corepack` for Yarn package manager
 
 **Node.js >= 16.10**
 
@@ -22,28 +24,12 @@ npm i -g corepack
 
 If you need more information about Yarn, click [here](https://yarnpkg.com/).
 
-### Install project dependencies
+2. Use the `yarn install` command to install project dependencies
 
-Use command:
-
-```
-yarn install
-```
-
-### Set processing .env settings
+3. Set your .env vars:
 
 ```
 REACT_APP_API_URL=<api_url>
 ```
 
-### Runs the app in the development mode
-
-```
-yarn start
-```
-
-### Builds the app for production to the `build` folder
-
-```
-yarn build
-```
+4. Use the `yarn build` command to build app for production to the `build` folder
