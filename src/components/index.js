@@ -1,3 +1,4 @@
+export { default as MyDataPicker } from './datapicker';
 export { default as FieldMask } from './field-mask';
 export { default as FlexContainer } from './flex-сontainer';
 export { default as Footer } from './footer';

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import IconButton from '@mui/material/IconButton';
 
 export const Main = styled.div`
   display: flex;
@@ -31,4 +32,17 @@ export const PersonaTitle = styled.h2`
   font-size: 24px;
   border-bottom: 1px dashed #000;
   margin-bottom: 25px;
+`;
+
+export const PersonalWrap = styled.div`
+  padding-right: 50px;
+  position: relative;
+  margin-bottom: 15px;
+`;
+
+export const PersonalButtonAdd = styled(IconButton)`
+  color: #000;
+  position: absolute;
+  top: 20px;
+  right: 0;
 `;
